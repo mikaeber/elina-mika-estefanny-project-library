@@ -198,3 +198,13 @@ const renderBookList = () => {
 
 // Render the book list when the website is loaded
 document.addEventListener("DOMContentLoaded", renderBookList);
+
+// Function to filter books by genre .filter function @Estefanny
+
+// Function to sort books @ .sort function  @Elina
+
+// Styling in style.css file
+
+// Random button to get a random book  @Mika
+
+// add images @Mika
