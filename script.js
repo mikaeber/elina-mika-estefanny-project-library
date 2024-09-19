@@ -185,6 +185,26 @@ const books = [
   },
 ];
 
+// Sort books by highest to lowest rating
+const sortByRatingHighToLow = (array) => {
+  //Sorts the list by rating 
+  const sortedByRatingHighToLow = array.sort((a, b) => b.rating - a.rating);
+  //Returns the sorted list
+  return sortedByRatingHighToLow;
+}
+//Calls the sort by rating function
+sortByRatingHighToLow(books)
+
+//Sort books by lowest to highest using sort and reverse
+function sortByRatingLowToHigh(array) {
+  //Sorts the list by rating 
+  const sortedByRatingLowToHigh = sortByRatingHighToLow(array).reverse();
+  //Returns the sorted list
+  return sortedByRatingLowToHigh;
+}
+//Calls the sort by rating function
+sortByRatingLowToHigh(books)
+
 // Mapping over all the books and returning a string that contains the book's details
 const bookList = books.map((book) => {
   return `<li>${book.title}</li><li>${book.author}</li><li>${book.year}</li><li>${book.genre}</li><li>${book.rating}</li><li>${book.description}</li><li>${book.image}</li>`;
