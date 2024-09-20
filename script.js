@@ -71,7 +71,7 @@ const books = [
     rating: 4.7,
     description:
       "The first book in the beloved Harry Potter series, it introduces readers to the magical world of Hogwarts and the young wizard Harry Potter.",
-    image: "./books-images/harry-potter-and-the-sorcerer'.jpg",
+    image: "./books-images/harry-potter-and-the-sorcerer.jpg",
   },
   {
     title: "Moby-Dick",
@@ -211,15 +211,49 @@ const bookList = books.map((book) => {
 });
 
 // Function to render the book list
-const renderBookList = () => {
+const renderBookList = (filteredBooks) => {
   const bookListElement = document.getElementById("book-list");
-  bookListElement.innerHTML = bookList.join("");
+  const bookList = filteredBooks.map((book) => {
+    return `<li>
+      <img src="${book.image}" alt="${book.title}" style="width:100px;height:150px;">
+      <h3>${book.title}</h3>
+      <p>Author: ${book.author}</p>
+      <p>Year: ${book.year}</p>
+      <p>Genre: ${book.genre}</p>
+      <p>Rating: ${book.rating}</p>
+      <p>Description: ${book.description}</p>
+    </li>`;
+  }).join("");
+  bookListElement.innerHTML = bookList;
 };
+
 
 // Render the book list when the website is loaded
 document.addEventListener("DOMContentLoaded", renderBookList);
 
 // Function to filter books by genre .filter function @Estefanny
+const filterBooksByGenre = (genre) => {
+  return books.filter((book) => book.genre.toLowerCase() === genre.toLowerCase());
+};
+
+
+// Render all books by default when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  renderBookList(books);
+});
+
+//Render genre @Estefanny
+document.getElementById("genre-select").addEventListener("change", (event) => {
+  const selectedGenre = event.target.value;
+
+  // Filter books if a genre is selected, otherwise show all books
+  if (selectedGenre) {
+    const filteredBooks = filterBooksByGenre(selectedGenre);
+    renderBookList(filteredBooks);
+  } else {
+    renderBookList(books); // Show all books if no genre is selected
+  }
+});
 
 // Function to sort books @ .sort function  @Elina
 
