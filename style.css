@@ -19,13 +19,46 @@ h1 {
 }
 
 /* Dropdown Select */
+/* Style for the dropdown select */
 #genre-select {
-  display: block;
-  width: 200px;
-  margin: 0 auto 20px;
-  padding: 10px;
-  font-size: 16px;
-}
+    display: block;
+    width: 250px; /* Adjust width */
+    margin: 20px auto; /* Center the select box */
+    padding: 12px; /* Add padding for better look */
+    font-size: 16px; /* Adjust the font size */
+    font-family: Arial, sans-serif; /* Font family */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #333; /* Border style and color */
+    background-color: #fff; /* Background color */
+    color: #333; /* Text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Transition for hover effects */
+  }
+  
+  /* Hover effect */
+  #genre-select:hover {
+    border-color: #323cff; /* Change border color on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  /* Focus (when the user clicks on the dropdown) */
+  #genre-select:focus {
+    outline: none; /* Remove default outline */
+    border-color: #4349f8; /* Border color when focused */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow when focused */
+  }
+  
+  /* Optional: Adjust dropdown arrow styling */
+  #genre-select {
+    -webkit-appearance: none; /* Remove default arrow in some browsers */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+  }
+  
 
 /* Container for book list */
 #book-list {
@@ -63,7 +96,7 @@ h1 {
 }
 
 #book-list p {
-  margin: 5px 0;
+  margin: 4px 0;
 }
 
 /* Responsive Media Queries */
