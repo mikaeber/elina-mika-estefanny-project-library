@@ -213,6 +213,15 @@ document.getElementById("sort-low-to-high-button").addEventListener("click", () 
   const sortedBooks = sortByRatingLowToHigh([...books]);
   renderBookList(sortedBooks);
 });
+// Function to get a random book
+function getRandomBook() {
+  const randomIndex = Math.floor(Math.random() * books.length);
+  const randomBook = [books[randomIndex]]; // Wrapping in an array to keep consistency with renderBookList
+  renderBookList(randomBook);
+}
+
+// Event listener for the random book button
+document.getElementById("random-book-button").addEventListener("click", getRandomBook);
 
 // Mapping over all the books and returning a string that contains the book's details
 const bookList = books.map((book) => {
