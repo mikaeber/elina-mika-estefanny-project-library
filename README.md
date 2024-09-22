@@ -1,3 +1,3 @@
 # project-library
 
-Hej hej update just to check
+A project to practice JS functions including map, filter, and sort. 
