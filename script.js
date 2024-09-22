@@ -185,25 +185,34 @@ const books = [
   },
 ];
 
-// Sort books by highest to lowest rating
+// Sort functions @Elina
+// Sort books by highest to lowest rating 
 const sortByRatingHighToLow = (array) => {
   //Sorts the list by rating 
   const sortedByRatingHighToLow = array.sort((a, b) => b.rating - a.rating);
   //Returns the sorted list
   return sortedByRatingHighToLow;
 }
-//Calls the sort by rating function
-sortByRatingHighToLow(books)
 
-//Sort books by lowest to highest using sort and reverse
+// Sort books by lowest to highest using sort and reverse
 function sortByRatingLowToHigh(array) {
   //Sorts the list by rating 
   const sortedByRatingLowToHigh = sortByRatingHighToLow(array).reverse();
   //Returns the sorted list
   return sortedByRatingLowToHigh;
 }
-//Calls the sort by rating function
-sortByRatingLowToHigh(books)
+
+// Event listeners for sorting buttons and calls the sort by rating function once button is clicked
+// Button rating high to low
+document.getElementById("sort-high-to-low-button").addEventListener("click", () => {
+  const sortedBooks = sortByRatingHighToLow([...books]);
+  renderBookList(sortedBooks);
+})
+// Button rating low to high
+document.getElementById("sort-low-to-high-button").addEventListener("click", () => {
+  const sortedBooks = sortByRatingLowToHigh([...books]);
+  renderBookList(sortedBooks);
+});
 
 // Mapping over all the books and returning a string that contains the book's details
 const bookList = books.map((book) => {
@@ -227,7 +236,6 @@ const renderBookList = (filteredBooks) => {
   bookListElement.innerHTML = bookList;
 };
 
-
 // Render the book list when the website is loaded
 document.addEventListener("DOMContentLoaded", renderBookList);
 
@@ -235,7 +243,6 @@ document.addEventListener("DOMContentLoaded", renderBookList);
 const filterBooksByGenre = (genre) => {
   return books.filter((book) => book.genre.toLowerCase() === genre.toLowerCase());
 };
-
 
 // Render all books by default when the page loads
 document.addEventListener("DOMContentLoaded", () => {
