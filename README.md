@@ -1,3 +1,5 @@
 # project-library
 
-A project to practice JS functions including map, filter, and sort. 
+A library of books to practice JS functions including map, filter, and sort.
+
+https://mikaelinaestefanny-library.netlify.app/

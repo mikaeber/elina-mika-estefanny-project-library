@@ -270,11 +270,3 @@ document.getElementById("genre-select").addEventListener("change", (event) => {
     renderBookList(books); // Show all books if no genre is selected
   }
 });
-
-// Function to sort books @ .sort function  @Elina
-
-// Styling in style.css file
-
-// Random button to get a random book  @Mika
-
-// add images @Mika
